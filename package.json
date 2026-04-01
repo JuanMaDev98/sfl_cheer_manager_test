@@ -4,8 +4,8 @@
   "description": "SFL Farm Helper Hub - A community miniapp for Sunflower Land players",
   "main": "index.html",
   "scripts": {
-    "dev": "npx wrangler pages dev . --port 8787",
-    "deploy": "npx wrangler pages deploy . --project-name sfl-cheer-manager"
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
   },
   "keywords": ["sunflower-land", "farm-helper", "community"],
   "license": "MIT"
