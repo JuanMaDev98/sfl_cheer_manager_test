@@ -1,0 +1,56 @@
+{
+    "app": {
+      "name": "SFL Farm Helper Hub",
+      "subtitle": "Connect with other farmers for mutual help exchange",
+      "footer": "🌻 SFL Farm Helper Hub • Requests expire after 24h"
+    },
+    "form": {
+      "title": "📝 Post Your Request",
+      "playerName": "Your In-Game Name *",
+      "playerNamePlaceholder": "Ex: FarmerJuan123",
+      "telegramUsername": "Your Telegram Username *",
+      "telegramUsernamePlaceholder": "Ex: juanma_dev (without @)",
+      "details": "Details (Optional)",
+      "detailsPlaceholder": "Ex: Need help harvesting pumpkins...",
+      "submit": "🚀 Post Request"
+    },
+    "requests": {
+      "title": "📋 Active Help Requests",
+      "loading": "🌻 Loading requests...",
+      "empty": "🌱 No active help requests yet.<br><small style=\"opacity:0.8\">Be the first to post!</small>",
+      "expired": "⏰ All requests have expired. Post a new one!",
+      "error": "⚠️ Error loading requests. Try refreshing.",
+      "timeRemaining": {
+        "hours": "⏳ {{hours}}h remaining",
+        "minutes": "⏳ {{minutes}}m remaining",
+        "expired": "⚠️ Expired"
+      },
+      "postedAgo": "Posted {{timeAgo}}",
+      "helpButton": "💬 Help Them",
+      "removeButton": "🗑️ Remove"
+    },
+    "actions": {
+      "confirmDelete": "Remove this help request?",
+      "requiredFields": "⚠️ Please fill in the required fields",
+      "posting": "🔄 Posting...",
+      "success": "✅ Request posted successfully!",
+      "errorPost": "❌ Error posting. Try again.",
+      "errorLoad": "❌ Error loading requests",
+      "removed": "🗑️ Request removed",
+      "errorRemove": "❌ Error removing request"
+    },
+    "language": {
+      "label": "Language",
+      "es": "Español",
+      "en": "English",
+      "switched": "Language switched to {{language}}"
+    },
+    "time": {
+      "justNow": "just now",
+      "minute": "m",
+      "hour": "h",
+      "day": "d",
+      "month": "mo",
+      "year": "y"
+    }
+  }

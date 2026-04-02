@@ -1,0 +1,56 @@
+{
+    "app": {
+      "name": "SFL Farm Helper Hub",
+      "subtitle": "Conecta con otros granjeros para ayuda mutua",
+      "footer": "🌻 SFL Farm Helper Hub • Las solicitudes expiran después de 24h"
+    },
+    "form": {
+      "title": "📝 Publica tu Solicitud",
+      "playerName": "Tu nombre en el juego *",
+      "playerNamePlaceholder": "Ej: FarmerJuan123",
+      "telegramUsername": "Tu usuario de Telegram *",
+      "telegramUsernamePlaceholder": "Ej: juanma_dev (sin @)",
+      "details": "Detalles (Opcional)",
+      "detailsPlaceholder": "Ej: Necesito ayuda con la cosecha de calabazas...",
+      "submit": "🚀 Publicar Solicitud"
+    },
+    "requests": {
+      "title": "📋 Solicitudes de Ayuda Activas",
+      "loading": "🌻 Cargando solicitudes...",
+      "empty": "🌱 Aún no hay solicitudes activas.\n<small style=\"opacity:0.8\">¡Sé el primero en publicar!</small>",
+      "expired": "⏰ Todas las solicitudes han expirado. ¡Publica una nueva!",
+      "error": "⚠️ Error al cargar solicitudes. Intenta recargar.",
+      "timeRemaining": {
+        "hours": "⏳ {{hours}}h restantes",
+        "minutes": "⏳ {{minutes}}m restantes",
+        "expired": "⚠️ Expirada"
+      },
+      "postedAgo": "Publicada {{timeAgo}}",
+      "helpButton": "💬 Ayudar",
+      "removeButton": "🗑️ Eliminar"
+    },
+    "actions": {
+      "confirmDelete": "¿Eliminar esta solicitud de ayuda?",
+      "requiredFields": "⚠️ Por favor completa los campos obligatorios",
+      "posting": "🔄 Publicando...",
+      "success": "✅ ¡Solicitud publicada con éxito!",
+      "errorPost": "❌ Error al publicar. Intenta de nuevo.",
+      "errorLoad": "❌ Error al cargar solicitudes",
+      "removed": "🗑️ Solicitud eliminada",
+      "errorRemove": "❌ Error al eliminar solicitud"
+    },
+    "language": {
+      "label": "Idioma",
+      "es": "Español",
+      "en": "English",
+      "switched": "Idioma cambiado a {{language}}"
+    },
+    "time": {
+      "justNow": "ahora",
+      "minute": "m",
+      "hour": "h",
+      "day": "d",
+      "month": "mo",
+      "year": "a"
+    }
+  }

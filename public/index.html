@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>SFL Farm Helper Hub 🌻</title>
+  <title data-i18n="app.name">SFL Farm Helper Hub 🌻</title>
   
-  <!-- Telegram WebApp SDK (OBLIGATORIO) -->
+  <!-- Telegram WebApp SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   
   <!-- Estilos -->
@@ -13,45 +13,71 @@
 </head>
 <body>
   <header class="header">
-    <h1>🌻 SFL Farm Helper Hub</h1>
-    <p class="subtitle">Conecta con otros granjeros para ayuda mutua</p>
+    <!-- Selector de Idioma -->
+    <div class="lang-selector">
+      <button class="lang-btn" id="langToggle" aria-label="Change language">
+        <span>🌐</span>
+        <span id="currentLang">ES</span>
+        <span>▼</span>
+      </button>
+      <div class="lang-dropdown" id="langDropdown">
+        <div class="lang-option active" data-lang="es">
+          <span class="flag">🇪🇸</span>
+          <span data-i18n="language.es">Español</span>
+        </div>
+        <div class="lang-option" data-lang="en">
+          <span class="flag">🇬🇧</span>
+          <span data-i18n="language.en">English</span>
+        </div>
+      </div>
+    </div>
+    
+    <h1 data-i18n="app.name">🌻 SFL Farm Helper Hub</h1>
+    <p class="subtitle" data-i18n="app.subtitle">Conecta con otros granjeros para ayuda mutua</p>
   </header>
 
   <main class="container">
     <!-- Formulario de Publicación -->
     <section class="post-request-section">
-      <h2>📝 Post Your Request</h2>
+      <h2 data-i18n="form.title">📝 Post Your Request</h2>
       <form id="requestForm" class="request-form">
         <div class="form-group">
-          <label for="playerName">In-Game Name *</label>
-          <input type="text" id="playerName" name="playerName" required placeholder="Ej: FarmerJuan123" maxlength="30" />
+          <label for="playerName" data-i18n="form.playerName">In-Game Name *</label>
+          <input type="text" id="playerName" name="playerName" required 
+                 data-i18n-placeholder="form.playerNamePlaceholder" 
+                 placeholder="Ej: FarmerJuan123" maxlength="30" />
         </div>
         <div class="form-group">
-          <label for="telegramUsername">Telegram Username *</label>
-          <input type="text" id="telegramUsername" name="telegramUsername" required placeholder="Ej: juanma_dev (sin @)" maxlength="50" />
+          <label for="telegramUsername" data-i18n="form.telegramUsername">Telegram Username *</label>
+          <input type="text" id="telegramUsername" name="telegramUsername" required 
+                 data-i18n-placeholder="form.telegramUsernamePlaceholder"
+                 placeholder="Ej: juanma_dev (sin @)" maxlength="50" />
         </div>
         <div class="form-group">
-          <label for="details">Details (Optional)</label>
-          <textarea id="details" name="details" placeholder="Ej: Necesito ayuda con la cosecha de calabazas..."></textarea>
+          <label for="details" data-i18n="form.details">Details (Optional)</label>
+          <textarea id="details" name="details" 
+                    data-i18n-placeholder="form.detailsPlaceholder"
+                    placeholder="Ej: Necesito ayuda con la cosecha de calabazas..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">🚀 Post Request</button>
+        <button type="submit" class="btn btn-primary" data-i18n="form.submit">🚀 Post Request</button>
       </form>
     </section>
 
     <!-- Lista de Solicitudes -->
     <section class="requests-section">
-      <h2>📋 Active Help Requests</h2>
+      <h2 data-i18n="requests.title">📋 Active Help Requests</h2>
       <div id="requestsList" class="requests-list">
-        <div class="loading">Loading requests...</div>
+        <div class="loading" data-i18n="requests.loading">Loading requests...</div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>🌻 SFL Farm Helper Hub • Requests expire after 24h</p>
+    <p data-i18n="app.footer">🌻 SFL Farm Helper Hub • Requests expire after 24h</p>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/supabase-client.js"></script>
   <script src="js/app.js"></script>
 </body>
