@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SFL Farm Helper Hub 🌻</title>
-  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Telegram WebApp SDK (OBLIGATORIO) -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="header">
     <h1>🌻 SFL Farm Helper Hub</h1>
-    <p class="subtitle">Find help for your farm or help others!</p>
+    <p class="subtitle">Conecta con otros granjeros para ayuda mutua</p>
   </header>
 
   <main class="container">
+    <!-- Formulario de Publicación -->
     <section class="post-request-section">
-      <h2>Post Your Request</h2>
+      <h2>📝 Post Your Request</h2>
       <form id="requestForm" class="request-form">
         <div class="form-group">
           <label for="playerName">In-Game Name *</label>
-          <input type="text" id="playerName" required placeholder="Your Sunflower Land name">
+          <input type="text" id="playerName" name="playerName" required placeholder="Ej: FarmerJuan123" maxlength="30" />
         </div>
         <div class="form-group">
           <label for="telegramUsername">Telegram Username *</label>
-          <input type="text" id="telegramUsername" required placeholder="@yourusername">
+          <input type="text" id="telegramUsername" name="telegramUsername" required placeholder="Ej: juanma_dev (sin @)" maxlength="50" />
         </div>
         <div class="form-group">
           <label for="details">Details (Optional)</label>
-          <textarea id="details" placeholder="What help do you need on your farm?"></textarea>
+          <textarea id="details" name="details" placeholder="Ej: Necesito ayuda con la cosecha de calabazas..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Post Request</button>
+        <button type="submit" class="btn btn-primary">🚀 Post Request</button>
       </form>
     </section>
 
+    <!-- Lista de Solicitudes -->
     <section class="requests-section">
-      <h2>Active Help Requests</h2>
+      <h2>📋 Active Help Requests</h2>
       <div id="requestsList" class="requests-list">
         <div class="loading">Loading requests...</div>
       </div>
@@ -41,13 +48,10 @@
   </main>
 
   <footer class="footer">
-    <p>SFL Farm Helper Hub - Helping farmers connect 🚜</p>
+    <p>🌻 SFL Farm Helper Hub • Requests expire after 24h</p>
   </footer>
 
-  <script>
-    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-  </script>
+  <!-- Scripts -->
   <script src="js/supabase-client.js"></script>
   <script src="js/app.js"></script>
 </body>
