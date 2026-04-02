@@ -278,101 +278,102 @@ h2 {
   font-size: 0.875rem;
   padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
 
-/* ========================================
-   LANGUAGE SELECTOR STYLES
-   ======================================== */
-   .lang-selector {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 100;
-  }
   
-  .lang-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--border, #e5e7eb);
-    border-radius: 10px;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text, #1f2937);
-    cursor: pointer;
+.lang-selector {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text, #1f2937);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+  min-height: 40px;
+}
+
+.lang-btn:hover {
+  background: var(--card-bg, #f3f4f6);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lang-btn:active {
+  transform: translateY(0);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--card-bg, white);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  z-index: 101;
+}
+
+.lang-dropdown.show {
+  display: flex;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.lang-option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text, #1f2937);
+}
+
+.lang-option:hover {
+  background: var(--bg, #f3f4f6);
+}
+
+.lang-option.active {
+  background: var(--primary, #f59e0b);
+  color: white;
+  font-weight: 600;
+}
+
+.lang-option .flag {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+  .lang-selector {
+    position: static;
+    margin-bottom: 1rem;
     display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: all 0.2s;
-    min-height: 40px;
-  }
-  
-  .lang-btn:hover {
-    background: var(--tg-theme-secondary-bg-color, #f3f4f6);
-    transform: translateY(-1px);
+    justify-content: flex-end;
   }
   
   .lang-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 0.5rem;
-    background: var(--card-bg, white);
-    border: 1px solid var(--border, #e5e7eb);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    min-width: 160px;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    z-index: 101;
+    right: auto;
+    left: 0;
+    width: 100%;
   }
-  
-  .lang-dropdown.show {
-    display: flex;
-  }
-  
-  .lang-option {
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    transition: background 0.15s;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .lang-option:hover {
-    background: var(--tg-theme-secondary-bg-color, #f3f4f6);
-  }
-  
-  .lang-option.active {
-    background: var(--primary, #f59e0b);
-    color: var(--tg-button-text, white);
-    font-weight: 600;
-  }
-  
-  .lang-option .flag {
-    font-size: 1.1rem;
-  }
-  
-  /* Responsive: mover selector en móviles */
-  @media (max-width: 480px) {
-    .lang-selector {
-      position: static;
-      margin-bottom: 1rem;
-    }
-    
-    .lang-dropdown {
-      right: auto;
-      left: 0;
-      width: 100%;
-    }
-  }
-  
-  /* Animación suave para el dropdown */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .lang-dropdown.show {
-    animation: fadeIn 0.15s ease-out;
-  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
