@@ -8,7 +8,6 @@
    TELEGRAM THEME VARIABLES (Nativo)
    ======================================== */
 :root {
-  /* Fallbacks para web normal */
   --tg-bg: var(--tg-theme-bg-color, #fef9ee);
   --tg-text: var(--tg-theme-text-color, #1f2937);
   --tg-hint: var(--tg-theme-hint-color, #6b7280);
@@ -18,7 +17,6 @@
   --tg-secondary-bg: var(--tg-theme-secondary-bg-color, #ffffff);
   --tg-border: var(--tg-theme-border-color, #e5e7eb);
   
-  /* Colores personalizados que respetan el tema */
   --primary: var(--tg-button, #f59e0b);
   --primary-dark: #d97706;
   --secondary: var(--tg-theme-secondary-bg-color, #10b981);
@@ -38,7 +36,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Mejora UX en Telegram: sin scroll horizontal, sin zoom accidental */
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   user-select: none;
@@ -50,8 +47,8 @@ body {
   color: var(--tg-button-text, white);
   text-align: center;
   padding: 1.5rem 1rem;
-  /* Espacio para la barra de estado de Telegram */
   padding-top: max(1.5rem, env(safe-area-inset-top));
+  position: relative;
 }
 
 .header h1 {
@@ -127,7 +124,6 @@ h2 {
   font-family: inherit;
 }
 
-/* Botones */
 .btn {
   padding: 0.875rem 1.5rem;
   border: none;
@@ -141,7 +137,7 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px; /* Área táctil mínima para móviles */
+  min-height: 48px;
 }
 
 .btn-primary {
@@ -189,7 +185,6 @@ h2 {
   color: white;
 }
 
-/* Lista de solicitudes */
 .requests-list {
   display: flex;
   flex-direction: column;
@@ -250,7 +245,6 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* Estados */
 .loading,
 .empty,
 .error {
@@ -268,7 +262,7 @@ h2 {
   opacity: 0.8;
 }
 
-/* Footer */
+/* ✅ CORREGIDO: Footer con llave bien cerrada */
 .footer {
   text-align: center;
   padding: 1.25rem 1rem;
@@ -277,71 +271,78 @@ h2 {
   color: var(--text-light);
   font-size: 0.875rem;
   padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
 
-  
+/* ========================================
+   LANGUAGE SELECTOR STYLES
+   ======================================== */
 .lang-selector {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 100;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
 }
 
 .lang-btn {
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border, #e5e7eb);
+  border: 2px solid var(--primary, #f59e0b);
   border-radius: 10px;
-  padding: 0.5rem 0.75rem;
+  padding: 8px 14px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text, #1f2937);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: all 0.2s;
-  min-height: 40px;
-}
-
-.lang-btn:hover {
-  background: var(--card-bg, #f3f4f6);
-  transform: translateY(-1px);
+  gap: 6px;
+  min-height: 42px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.1s;
 }
 
 .lang-btn:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
+.lang-btn:hover {
+  background: var(--bg, #fef9ee);
+}
+
+/* Dropdown OCULTO por defecto */
 .lang-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 0.5rem;
-  background: var(--card-bg, white);
-  border: 1px solid var(--border, #e5e7eb);
+  margin-top: 8px;
+  background: var(--card-bg, #ffffff);
+  border: 2px solid var(--border, #e5e7eb);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  min-width: 160px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
   overflow: hidden;
-  display: none;
+  display: none !important; /* ✅ FORZAR oculto */
   flex-direction: column;
-  z-index: 101;
+  z-index: 10000;
 }
 
+/* Mostrar cuando tiene clase .show */
 .lang-dropdown.show {
-  display: flex;
-  animation: fadeIn 0.15s ease-out;
+  display: flex !important; /* ✅ FORZAR visible */
 }
 
 .lang-option {
-  padding: 0.75rem 1rem;
+  padding: 12px 16px;
   cursor: pointer;
-  transition: background 0.15s;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   color: var(--text, #1f2937);
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+  transition: background 0.15s;
 }
 
 .lang-option:hover {
@@ -355,25 +356,22 @@ h2 {
 }
 
 .lang-option .flag {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 480px) {
   .lang-selector {
-    position: static;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 0 12px 0;
+    width: 100%;
   }
   
   .lang-dropdown {
-    right: auto;
-    left: 0;
+    position: static;
+    margin-top: 8px;
     width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
 }
