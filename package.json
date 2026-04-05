@@ -5,8 +5,16 @@
   "main": "index.html",
   "scripts": {
     "dev": "npx wrangler dev",
-    "deploy": "npx wrangler deploy"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
-  "keywords": ["sunflower-land", "farm-helper", "community"],
-  "license": "MIT"
+  "keywords": [
+    "sunflower-land",
+    "farm-helper",
+    "community"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.80.0"
+  }
 }
